@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Animation</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .coin {
+            width: 100px;
+            height: 100px;
+            background-color: #f0e68c; /* gold color */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<div class="coin" id="coin" onclick="flipCoin()">?</div>
+
+<script>
+    function flipCoin() {
+        var coin = document.getElementById("coin");
+
+        // Apply a rotation animation to simulate a coin flip
+        coin.style.transform = "rotateX(360deg)";
+
+        // After a delay, reset the transform to its original state
+        setTimeout(function () {
+            coin.style.transform = "rotateX(0deg)";
+            // Simulate the result of the coin flip
+            simulateCoinResult();
+        }, 500); // Adjust the duration of the animation as needed
+    }
+
+    function simulateCoinResult() {
+        var coin = document.getElementById("coin");
+
+        // Generate a random number (0 or 1) to simulate heads or tails
+        var result = Math.round(Math.random());
+
+        // Update the coin element based on the result
+        coin.textContent = result === 0 ? "H" : "T";
+    }
+</script>
+
+</body>
+</html>
