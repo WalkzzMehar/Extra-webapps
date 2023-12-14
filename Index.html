@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss Maker</title>
+    <style>
+        
+       
+    </style>
+</head>
+<body class="font-sans bg-gradient-to-r from-violet-500 to-fuchsia-500 mt-[80px]">
+<div class="w-[500px] m-auto text-center p-8 bg-[#F2F3F4] rounded-[10px]">
+<label for="headsText" class="block mb-2">Heads Text:</label>
+<input type="text" id="headsText" value="H">
+
+<label for="tailsText" class="block mb-2">Tails Text:</label>
+<input type="text" id="tailsText" value="T">
+
+
+<div class="coin w-24 h-24 flex items-center justify-center text-2xl font-bold mb-5 rounded-full" id="coin">?</div>
+<button onclick="tossCoin()" class="p-3 w-full rounded-full box-border mt-[10px] mr-[10px] bg-blue-600 text-white cursor-pointer font-medium">Toss Coin</button>
+
+<script>
+    function tossCoin() {
+        var coin = document.getElementById("coin");
+        var headsText = document.getElementById("headsText").value;
+        var tailsText = document.getElementById("tailsText").value;
+
+        // Generate a random number (0 or 1) to simulate heads or tails
+        var result = Math.round(Math.random());
+
+        // Update the coin element based on the result
+        coin.textContent = result === 0 ? headsText : tailsText;
+    }
+
+
+    
+
+</script>
+</div>
+</body>
+</html>
